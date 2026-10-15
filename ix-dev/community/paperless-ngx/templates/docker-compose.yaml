@@ -29,7 +29,7 @@
 {% do paperless_container.add_network(paperless_net) %}
 {% do paperless_container.set_user(0, 0) %}
 {% do paperless_container.add_caps(["CHOWN", "DAC_OVERRIDE", "FOWNER", "SETGID", "SETUID"]) %}
-{% do paperless_container.healthcheck.set_test("curl", {"port": values.network.web_port.port_number}) %}
+{% do paperless_container.healthcheck.set_test("curl", {"port": 8000}) %}
 
 {% do paperless_container.add_port(values.network.web_port) %}
 
